@@ -13,4 +13,6 @@ Genereal Instructions:
 7. change credentials.json with relevant cred's.
 8. create a new custom python sensor, and select zoe-console.py as the script. i suggest a frequency of 5 minutes.
 
-If something isn't working, try running "C:\Program Files (x86)\PRTG Network Monitor\Python34\python.exe" "C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\python\zoe-console.py" in a command shell and open an issue with the results.
+If something isn't working, try running 
+"C:\Program Files (x86)\PRTG Network Monitor\Python34\python.exe" "C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\python\zoe-console.py" 
+in a command shell and open an issue with the results.
