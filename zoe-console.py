@@ -16,7 +16,6 @@ import sys
 
 # We play with encodings so it's good to check what we are set to support.
 import locale
-import time
 
 # Load credentials.
 in_file = open('C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\python\credentials.json', 'r')
