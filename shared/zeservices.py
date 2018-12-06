@@ -37,7 +37,6 @@ class ZEServices:
    if len(splitToken) != 3: raise ValueError('Not a well formed JWT token')
 
    # Get the JSON payload of the JWT token.
-   # (ldti - I fixed the incorrect padding error by adding the == at the end)
    jsonPayload = base64.b64decode(splitToken[1] + "==")
 
    # Parse it as JSON.
@@ -70,7 +69,7 @@ class ZEServices:
    api_json = requests.post(url, headers=ZEServices.stealthyHeaders, json=payload).json()
 
    # We do not want to save all the user data returned on login, so we create a smaller file of just the mandatory information.
-   tokenData = {'refresh_token' : api_json['refresh_token'], 'token' : api_json['token']}
+   tokenData = {'refresh_token' : api_json['xsrfToken'], 'token' : api_json['token']}
 
    # Save this refresh token and JWT token for future use so we are nicer to Renault's authentication server.
    with open('credentials_token.json', 'w') as outfile:
