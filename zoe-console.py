@@ -40,7 +40,7 @@ battery = zeServices_json['charge_level']
 remaining_range = zeServices_json['remaining_range']
 charging = zeServices_json['charging']
 pluggedIn = zeServices_json['plugged']
-ChargeMode = zeServices_json['charging_point']
+#ChargeMode = zeServices_json['charging_point']
 updateTime = zeServices_json['last_update']
 if charging: remaining_time = zeServices_json['remaining_time'] if 'remaining_time' in zeServices_json else None
 
