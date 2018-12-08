@@ -27,7 +27,7 @@ class ZEServices:
  def getAccessToken(self, user, password):
   try:
    # File contains refresh_token followed by the JWT token.
-   with open('credentials_token.json', 'r') as tokenStorage:
+   with open('C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\python\credentials_token.json', 'r') as tokenStorage:
     tokenData = json.load(tokenStorage)
 
    # We could be using python_jwt but even the official ZE Services ("decodeToken") does it this crude way, so why overcomplicate things?
@@ -56,7 +56,7 @@ class ZEServices:
     tokenData['token'] = response['token']
 
     # Save this refresh token and new JWT token so we are nicer to Renault's authentication server.
-    with open('credentials_token.json', 'w') as outfile:
+    with open('C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\python\credentials_token.json', 'w') as outfile:
      json.dump(tokenData, outfile)
 
    # Return the token (as-is if valid, refreshed if not).
@@ -72,7 +72,7 @@ class ZEServices:
    tokenData = {'refresh_token' : api_json['xsrfToken'], 'token' : api_json['token']}
 
    # Save this refresh token and JWT token for future use so we are nicer to Renault's authentication server.
-   with open('credentials_token.json', 'w') as outfile:
+   with open('C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\python\credentials_token.json', 'w') as outfile:
     json.dump(tokenData, outfile)
 
    # The script will just want the token.
